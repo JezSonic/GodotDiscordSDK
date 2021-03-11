@@ -1,4 +1,4 @@
-name: 🎨 Windows
+name: Windows
 on:
   pull_request:
     branches:
@@ -10,7 +10,7 @@ on:
 jobs:
   build-64-release:
     runs-on: "windows-latest"
-    name: Build 64-Bit Release (scons platform=windows target=release bits=64)
+    name: Build 64-Bit Release
     steps:
       - uses: actions/checkout@v2
 
@@ -42,11 +42,11 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: gdsdk_64_release
-          path: demo/bin/windows-64/gdsdk.dll
+          path: demo/bin/windows-64/*
 
   build-64-debug:
     runs-on: "windows-latest"
-    name: Build 64-Bit Debug (scons platform=windows target=debug bits=64)
+    name: Build 64-Bit Debug
     steps:
       - uses: actions/checkout@v2
 
@@ -78,11 +78,11 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: gdsdk_64_debug
-          path: demo/bin/windows-64/gdsdk.dll
+          path: demo/bin/windows-64/*
 
   build-32-release:
     runs-on: "windows-latest"
-    name: Build 32-Bit Release (scons platform=windows target=release bits=32)
+    name: Build 32-Bit Release
     steps:
       - uses: actions/checkout@v2
 
@@ -114,11 +114,11 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: gdsdk_32_release
-          path: demo/bin/windows-32/gdsdk.dll
+          path: demo/bin/windows-32/*
 
   build-32-debug:
     runs-on: "windows-latest"
-    name: Build 32-Bit Debug (scons platform=windows target=debug bits=32)
+    name: Build 32-Bit Debug
     steps:
       - uses: actions/checkout@v2
 
@@ -150,4 +150,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: gdsdk_32_debug
-          path: demo/bin/windows-32/gdsdk.dll
+          path: demo/bin/windows-32/*
